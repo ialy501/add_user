@@ -1,0 +1,15 @@
+[unit]
+Description= add user
+After=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/home/$USER/add_user/script/user.sh
+WorkingDirectory=/home/$USER
+User=$USER
+Group=$USER
+
+[Install]
+WantedBy=multi-user.target
+
